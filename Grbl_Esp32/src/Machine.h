@@ -13,7 +13,7 @@
 // !!! For actual use, change the line above to select a board
 // from Machines/, for example:
 // #include "Machines/3axis_v4.h"
-#include "Machines/1_axis_test.h"
+#include "Machines/layoutTable.h"
 
 // === OEM Single File Configuration Option
 // OEMs that wish to publish source code that is configured for a
