@@ -33,6 +33,8 @@
 
 // === Special Features ===
 
+#define USE_STEPSTICK   // makes sure MS1,2,3 !reset and !sleep are set
+
 // I2S (steppers & other output-only pins)
 #define USE_I2S_OUT
 #define USE_I2S_STEPS
