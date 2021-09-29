@@ -54,14 +54,12 @@
 // Motor Socket #2
 #define Y_DIRECTION_PIN         I2SO(4)
 #define Y_STEP_PIN              I2SO(5)
-#define Y_STEPPER_MS3           I2SO(6)
 #define Y_DISABLE_PIN           I2SO(7)
 
 // Motor Socket #3
 #define Y2_DISABLE_PIN          I2SO(8)
 #define Y2_DIRECTION_PIN        I2SO(9)
 #define Y2_STEP_PIN             I2SO(10)
-#define Y2_STEPPER_MS3          I2SO(11)
 
 // Motor Socket #4
 #define Z_DIRECTION_PIN         I2SO(12)
