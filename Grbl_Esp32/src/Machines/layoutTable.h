@@ -99,7 +99,7 @@
 
 // #define DEFAULT_STEPPING_INVERT_MASK     (bit(Y_AXIS))
 // #define DEFAULT_DIRECTION_INVERT_MASK    (bit(Y_AXIS))
-// #define DEFAULT_INVERT_ST_ENABLE         false
+#define DEFAULT_INVERT_ST_ENABLE    (bit(Y_AXIS))
 
 #define DEFAULT_X_STEPS_PER_MM 200.0
 #define DEFAULT_Y_STEPS_PER_MM 200.0
