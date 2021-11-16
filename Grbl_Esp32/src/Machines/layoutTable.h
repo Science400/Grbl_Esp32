@@ -69,20 +69,16 @@
 
 // 4x Input Module in Socket #1
 // https://github.com/bdring/6-Pack_CNC_Controller/wiki/4x-Switch-Input-module
-// #define X_LIMIT_PIN                 GPIO_NUM_33
-// #define Y_LIMIT_PIN                 GPIO_NUM_32
+#define X_LIMIT_PIN                 GPIO_NUM_33
+#define Y_LIMIT_PIN                 GPIO_NUM_32
 // #define Z_LIMIT_PIN                 GPIO_NUM_35
+#define DEFAULT_INVERT_LIMIT_PINS       1  // Sets the default for N.C. switches
 
 // === Homing ===
-// This cannot use homing because there are no switches yet
-#ifdef DEFAULT_HOMING_CYCLE_0
-    #undef DEFAULT_HOMING_CYCLE_0
-#endif
-
-#ifdef DEFAULT_HOMING_CYCLE_1
-    #undef DEFAULT_HOMING_CYCLE_1
-#endif
-
+#define DEFAULT_HOMING_SQUARED_AXIS bit(Y_AXIS)
+#define DEFAULT_HOMING_CYCLE_0 bit(Y_AXIS)
+#define DEFAULT_HOMING_CYCLE_1 bit(X_AXIS)
+#define DEFAULT_HOMING_DIR_MASK bit(X_AXIS || Y_AXIS)
 
 #define SPINDLE_TYPE    SpindleType::NONE
 
@@ -99,21 +95,21 @@
 
 // #define DEFAULT_STEPPING_INVERT_MASK     (bit(Y_AXIS))
 // #define DEFAULT_DIRECTION_INVERT_MASK    (bit(Y_AXIS))
-#define DEFAULT_INVERT_ST_ENABLE    (bit(Y_AXIS))
+// #define DEFAULT_INVERT_ST_ENABLE    (bit(Y_AXIS))
 
-#define DEFAULT_X_STEPS_PER_MM 200.0
-#define DEFAULT_Y_STEPS_PER_MM 200.0
+#define DEFAULT_X_STEPS_PER_MM 20.0     // Calibrated
+#define DEFAULT_Y_STEPS_PER_MM 4.348    // Calibrated
 #define DEFAULT_Z_STEPS_PER_MM 800.0
 
-#define DEFAULT_X_MAX_RATE 8000.0 // mm/min
-#define DEFAULT_Y_MAX_RATE 8000.0 // mm/min
+#define DEFAULT_X_MAX_RATE 50000.0 // mm/min    // Calibrated
+#define DEFAULT_Y_MAX_RATE 50000.0 // mm/min    // Calibrated
 #define DEFAULT_Z_MAX_RATE 3000.0 // mm/min
 
-#define DEFAULT_X_ACCELERATION 200.0 // mm/sec^2
-#define DEFAULT_Y_ACCELERATION 200.0 // mm/sec^2
+#define DEFAULT_X_ACCELERATION 200.0 // mm/sec^2    // Calibrated
+#define DEFAULT_Y_ACCELERATION 200.0 // mm/sec^2    // Calibrated
 #define DEFAULT_Z_ACCELERATION 100.0 // mm/sec^2
 
-#define DEFAULT_X_MAX_TRAVEL 500.0 // mm NOTE: Must be a positive value.
-#define DEFAULT_Y_MAX_TRAVEL 500.0 // mm NOTE: Must be a positive value.
+#define DEFAULT_X_MAX_TRAVEL 2000.0 // mm NOTE: Must be a positive value.
+#define DEFAULT_Y_MAX_TRAVEL 1000.0 // mm NOTE: Must be a positive value.
 #define DEFAULT_Z_MAX_TRAVEL 80.0 // mm NOTE: Must be a positive value.
 
